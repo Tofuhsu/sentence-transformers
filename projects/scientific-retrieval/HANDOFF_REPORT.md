@@ -104,8 +104,9 @@ on **Apple Silicon (M4 Pro, 48GB, MPS)**.
   `~/scientific-retrieval-evidence/final-results-20261018T220000Z.claude01/`
 - Official-test download/open record:
   `~/scientific-retrieval-evidence/official-test-open-20261018T210000Z.claude01/`
-- False-negative review:
-  `~/scientific-retrieval-evidence/negative-false-negative-review-20261018T180000Z.claude01/`
+- False-negative review (initial, and follow-up):
+  `~/scientific-retrieval-evidence/negative-false-negative-review-20261018T180000Z.claude01/`,
+  `~/scientific-retrieval-evidence/negative-false-negative-review-followup-20261018T230000Z.claude01/`
 - Per-run training/eval artifacts (model weights, logs, per-query results):
   `~/scientific-retrieval-artifacts/final-{B,C}-seed{13,42,2026}/`,
   `~/scientific-retrieval-artifacts/official-test-*/`
@@ -129,8 +130,13 @@ on **Apple Silicon (M4 Pro, 48GB, MPS)**.
 - **Not a fact-verification system.** This retrieves candidate evidence; it
   does not judge whether a claim is true.
 - **Not proof of zero false negatives.** The mining used a score-gap filter
-  and a 20-query nonexpert review that flagged (and excluded) 3 suspicious
-  candidates; unreviewed documents are not certified irrelevant.
+  and a 20-query nonexpert review that flagged 3 suspicious candidates, all
+  excluded from training. A follow-up pass against each query's full known-
+  positive text cleared one (QID 369) as likely a false alarm -- not acted
+  on, since that would mean changing the training set after already seeing
+  the official test result. Two (QID 760, 779) remain genuinely open items
+  for a domain expert; unreviewed documents elsewhere are not certified
+  irrelevant either.
 - **Not an officially published model.** No weights are hosted anywhere;
   only code, configs, and metrics are in the repo/evidence.
 

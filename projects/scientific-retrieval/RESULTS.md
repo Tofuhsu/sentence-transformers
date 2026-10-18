@@ -81,6 +81,15 @@ evidence directory for the full data)
 - 3 queries were removed from training (not from evaluation) based on a
   nonexpert (AI) false-negative review; see [NEGATIVES.md](NEGATIVES.md).
   This is a documented, symmetric exclusion, not a certified relevance label.
+  A follow-up pass (cross-checking each flagged candidate against its
+  query's full known-positive text; see
+  `~/scientific-retrieval-evidence/negative-false-negative-review-followup-20261018T230000Z.claude01/FOLLOWUP.md`)
+  reclassified one of the three (QID 369) as likely unrelated after all --
+  its exclusion from training was probably unnecessary, but it is **not**
+  reversed here, since that would mean changing the training set after
+  already seeing the official test result above. The other two (QID 760,
+  779) remain open, genuinely uncertain items for a domain expert, not
+  resolved by this project.
 - One fixed sampling seed (1729) was used for negative mining; negative-
   sampling variance itself was not measured, only training-seed variance.
 - 3,681 of 5,183 corpus documents are truncated at 256 tokens (see
