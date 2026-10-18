@@ -1,0 +1,65 @@
+{
+  "additional_merges": [],
+  "audit_manifest_sha256": "5275556f2a22a9b5c920194f2b6ab26864a0120a60a5bee27eb0f25336d14c8a",
+  "components_without_lexical_links": 490,
+  "decision": "Retain all 490 provisional groups; no additional manual merges or removals. No clear additional claim-variant link was identified in the inspected candidate pairs.",
+  "evidence_zip": "group-audit-20261017T220648Z.3mHylX.zip",
+  "evidence_zip_sha256": "4a2c2c668dfd29faa575ea0be9412489231b89115e2c16af681e149c849586e3",
+  "examples": [
+    {
+      "decision": "keep_together",
+      "query_ids": [
+        "1037",
+        "1038"
+      ],
+      "reason": "Opposing versions of the OCT4/SOX2/GATA3 reprogramming claim; already grouped."
+    },
+    {
+      "decision": "keep_together",
+      "group_id": "g0002",
+      "reason": "Eight distinct or opposing pyridostatin claims share a known relevant document; a conservative group, not eight identical claims."
+    },
+    {
+      "decision": "retain_separate_groups",
+      "query_ids": [
+        "1127",
+        "172"
+      ],
+      "reason": "Shared lupus topic, but different relationships: cardiovascular risk versus basophil disease mechanism; not clear paraphrases from these texts."
+    },
+    {
+      "decision": "keep_together_and_union_train_negative_exclusions",
+      "query_ids": [
+        "89",
+        "90"
+      ],
+      "reason": "Exact normalized duplicate text; q89 positives are 22406695 and 7521113, q90 has 22406695. Preserve original qrels."
+    }
+  ],
+  "lexical_links_crossing_nonlexical_components": 0,
+  "limitations": [
+    "Only candidate/nearest-neighbor text and large groups were inspected; not every possible semantic pair.",
+    "Character n-gram similarity can miss paraphrases and is insensitive to some word-order differences.",
+    "Nearest-neighbor pairs below 0.75 may still be related; no proof of zero leakage.",
+    "Shared known positives and source contexts can merge distinct claims.",
+    "The exclusion map is a prerequisite for sampling, not proof that future mined negatives are all irrelevant."
+  ],
+  "review_date_utc": "2026-10-17",
+  "review_type": "AI-assisted inspection of uploaded training-only text; not independent human or domain-expert adjudication",
+  "reviewed": {
+    "cross_group_nearest_neighbor_rows": 106,
+    "groups_with_at_least_four_queries": 25,
+    "lexical_candidate_pairs": 192,
+    "unmatched_nearest_neighbor_rows": 280,
+    "unmatched_singleton_queries": 81
+  },
+  "split_policy": {
+    "model_metrics_used_for_selection": false,
+    "seed": 42,
+    "seed_search_performed": false,
+    "selection": "first ceil(groups/5) groups ordered by SHA256 of compact JSON [seed, sorted query IDs]",
+    "validation_fraction_of_groups": 0.2
+  },
+  "status": "assistant_review_completed",
+  "verified_manifest_files": 13
+}

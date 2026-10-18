@@ -1,0 +1,47 @@
+{
+  "baseline_manifest_sha256": "d261e73f79264874ece61e551035234f80692e52a4e9d8d1bb733a9c10aed3b7",
+  "baseline_run": "baseline-validation-20261018T000044Z.8Vyvp7",
+  "baseline_zip_sha256": "ff573862610c38ee15d58c92fe05be90152196069c0e58bd7c19ce6c1e8fb0e3",
+  "branch": "experiment/scifact-hard-negatives",
+  "checked_source_sha256": {
+    "data_split.py": "0dbabfa67a1b8a0546963fb009a05cd3d73239cb524ec7a1e45941a55bbb473d",
+    "retrieval_baseline.py": "bbd5d9bafcd936aeac942d180d6bad56a7932b19eb7b038648d75376c6adefdf",
+    "retrieval_metrics.py": "e6bbe61079cc5ce69d26cba5121cfa6c12a5068401e4cca0217de5d732e0b515",
+    "retrieval_runtime.py": "6c8506394430c7d9d2cda437fdd8f5ff87ce17f13bb09a883cfef5768de32201",
+    "test_data_split.py": "b206c5c22e2ae6f5a0779e95cffde3e3ee67493817002a47c733b7106e0bf487",
+    "test_retrieval_metrics.py": "3d0dc52e08ca0baf2ba824eed8f87acc3adf2a5bbbf7f3c63ac4f95a3a338cb0",
+    "test_retrieval_runtime.py": "3f68230c7635fa3f49669d95f1eda624b6929c199613be134c44f57f1f295889",
+    "test_text_policy.py": "c6d2141460892680796c2dfb45ca7e3c40a7729674f1730edd2f13684eb06614",
+    "text_policy.py": "d25d5e31da8ca67c1650d573569855d2d2c665d70128e1cbf93541dc84527615",
+    "token_audit.py": "bc24aca7071fde388e013605de062f70384504bbe2af7c7160cf97b535d9a498",
+    "verify_metrics.py": "5aae1a1c7932c582864af811dc2d689865cfdd965bb5831ccdd180c5590decd8"
+  },
+  "corpus_documents": 5183,
+  "datasets": {
+    "BeIR/scifact": "b3b5335604bf5ee3c4447671af975ea25143d4f5",
+    "BeIR/scifact-qrels": "2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029"
+  },
+  "evidence_path": "evidence/baseline-validation-20261018T000044Z.8Vyvp7.zip",
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "official_test_evaluated": false,
+  "optimizer_steps": 0,
+  "pending": [
+    "B/C loss and negative-sampling design",
+    "matched pilot and three-seed training",
+    "final official test after selection is frozen",
+    "clean-environment end-to-end reproduction"
+  ],
+  "personal_fork": "https://github.com/Tofuhsu/sentence-transformers",
+  "planned_project_checkpoint_tag": "scifact-validation-baseline",
+  "project": "Scientific Retrieval Fine-tuning — Personal Fork",
+  "schema_version": 1,
+  "split_lock_sha256": "4bb47f6e5c5da8d87960acbc0c48cfbbf390cbd54cd770e7e271b0d2aef5a624",
+  "text_policy_sha256": "8669e4d6364acfc6cf70ca66715967f6a5e6fe1573c242abfaeddcd11489f84f",
+  "upstream_baseline_tag": "scientific-retrieval-baseline",
+  "upstream_commit": "b0bf39968ba461c34b29372144794eff1be06f6d",
+  "upstream_release": "v6.1.0",
+  "upstream_repository": "https://github.com/huggingface/sentence-transformers",
+  "validation_positive_pairs": 186,
+  "validation_queries": 160
+}
