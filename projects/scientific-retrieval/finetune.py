@@ -23,7 +23,8 @@ def load_dataset(path):
 
     from datasets import Dataset
 
-    rows = [_json.loads(line) for line in Path(path).open(encoding="utf-8")]
+    with Path(path).open(encoding="utf-8") as handle:
+        rows = [_json.loads(line) for line in handle]
     require(bool(rows), "Training data is empty")
     for key in ("anchor", "positive", "negative"):
         require(all(isinstance(r[key], str) and r[key].strip() for r in rows), f"Empty {key} text present")
