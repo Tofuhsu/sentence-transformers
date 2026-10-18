@@ -5,11 +5,14 @@ This directory contains Tofuhsu's experiment extension in a personal fork of
 Upstream framework code is unchanged. The upstream LICENSE and NOTICE.txt remain
 in the repository root. Added code uses Apache-2.0.
 
-## Current stage: freeze the training/validation split
+## Current stage: B/C comparison complete
 
 The research question is whether fixed hard negatives outperform ordinary
 negatives under matched fine-tuning conditions for scientific evidence retrieval.
-No retrieval result or model improvement is claimed at this stage.
+See [RESULTS.md](RESULTS.md) for the final protocol and official-test-evaluated
+answer: under this matched setup, hard negatives (C) beat ordinary negatives (B)
+on both nDCG@10 and Recall@10, on all 3 training seeds. The sections below
+describe the frozen split that the comparison was built on.
 
 - Framework baseline: `b0bf39968ba461c34b29372144794eff1be06f6d` (v6.1.0).
 - Model: `sentence-transformers/all-MiniLM-L6-v2`, revision
@@ -80,8 +83,20 @@ need to be documented per artifact.
 
 ## Original-model validation checkpoint
 
-The original MiniLM baseline and supporting code are now recorded in this
+The original MiniLM baseline and supporting code are recorded in this
 personal fork. See [BASELINE_RESULTS.md](BASELINE_RESULTS.md) for measured
-quality, timing, evidence, and the work still pending before controlled B/C
-fine-tuning. [baseline-lock.json](baseline-lock.json) pins the upstream, model,
-data, split, and evidence identities.
+quality, timing, and evidence from before any fine-tuning.
+[baseline-lock.json](baseline-lock.json) pins the upstream, model, data,
+split, and evidence identities.
+
+## Fine-tuning and final comparison
+
+[NEGATIVES.md](NEGATIVES.md) describes the B (ordinary) / C (hard) negative
+mining design. `finetune.py`, `run_final.sh`, `evaluate_finetuned.py`, and
+`evaluate_official_test.py` are the training/evaluation CLIs actually used
+for the pilot and final runs. [RESULTS.md](RESULTS.md) has the full protocol,
+final metrics (validation and official test, all 3 seeds), error analysis,
+and limitations. Model weights and large embedding/score artifacts are not
+committed to Git; see `~/scientific-retrieval-evidence/` and
+`~/scientific-retrieval-artifacts/` on the machine this ran on for the full
+evidence trail, hashes, and exit codes.
